@@ -1,19 +1,10 @@
 import '../styles/display.css'
-import { counterController } from '../controllers/CounterController'
 
-class CounterDisplay {
-  constructor(element) {
-    this._element = element
-  }
+import CounterForm from './CounterForm'
 
-  _events() {
-    document.querySelector('[data-restart]').addEventListener('click', () => {
-      counterController.buildCounterForm()
-    })
-  }
-
-  template({ days, hours, minutes, seconds }) {
-    return `
+const CounterDisplay = (element, { days, hours, minutes, seconds }) => {
+  const template = () =>
+    `
 			<header class="display-header">
         <h1>Contador</h1>
         <div>
@@ -41,12 +32,19 @@ class CounterDisplay {
         </div>
       </main>
 		`
+
+  const handleRestartClick = () => {
+    document.querySelector('[data-restart]').addEventListener('click', () => {
+      CounterForm(element)
+    })
   }
 
-  build(date) {
-    this._element.innerHTML = this.template(date)
-    this._events()
+  const init = () => {
+    element.innerHTML = template()
+    handleRestartClick()
   }
+
+  return init()
 }
 
 export default CounterDisplay

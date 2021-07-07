@@ -1,4 +1,6 @@
 import './styles/index.css'
-import { counterController } from './controllers/CounterController'
+import App from './app'
 
-counterController.buildCounterForm()
+const root = document.querySelector('#root')
+
+App(root)
