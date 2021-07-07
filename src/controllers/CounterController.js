@@ -6,6 +6,8 @@ import DateConverter from '../models/DateConverter'
 class CounterController {
   constructor() {
     this._timerId = 0
+    this._dateConverter = new DateConverter()
+
     this._counterView = new Counter(document.querySelector('#root'))
     this._counterDisplayView = new CounterDisplay(
       document.querySelector('#root')
@@ -29,12 +31,12 @@ class CounterController {
   }
 
   _updateDisplay(date) {
-    const dateConverter = new DateConverter(date)
+    const timeDifference = date - new Date()
 
-    const days = dateConverter.getDay()
-    const hours = dateConverter.getHours()
-    const minutes = dateConverter.getMinutes()
-    const seconds = dateConverter.getSeconds()
+    const days = this._dateConverter.getDay(timeDifference)
+    const hours = this._dateConverter.getHours(timeDifference)
+    const minutes = this._dateConverter.getMinutes(timeDifference)
+    const seconds = this._dateConverter.getSeconds(timeDifference)
 
     if (days === 0 && hours === 0 && minutes === 0 && seconds === 0)
       return clearInterval(this._timerId)

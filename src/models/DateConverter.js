@@ -1,28 +1,27 @@
 class DateConverter {
-  constructor(futureDate) {
+  constructor() {
     this._timers = {
       day: 1000 * 60 * 60 * 24,
       hour: 1000 * 60 * 60,
       minute: 1000 * 60,
       second: 1000,
     }
-    this._timeDifference = futureDate - new Date()
   }
 
-  getDay() {
-    return Math.floor(this._timeDifference / this._timers.day)
+  getDay(date) {
+    return Math.floor(date / this._timers.day)
   }
 
-  getHours() {
-    return Math.floor((this._timeDifference / this._timers.hour) % 24)
+  getHours(date) {
+    return Math.floor((date / this._timers.hour) % 24)
   }
 
-  getMinutes() {
-    return Math.floor((this._timeDifference / this._timers.minute) % 60)
+  getMinutes(date) {
+    return Math.floor((date / this._timers.minute) % 60)
   }
 
-  getSeconds() {
-    return Math.floor((this._timeDifference / this._timers.second) % 60)
+  getSeconds(date) {
+    return Math.floor((date / this._timers.second) % 60)
   }
 }
 
