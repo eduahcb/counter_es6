@@ -1,0 +1,17 @@
+html {
+	font-size: 100%;
+	background-color: #000;
+	color: #191A18;
+	font-family: sans-serif;
+}
+
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+	box-sizing: inherit;
+}

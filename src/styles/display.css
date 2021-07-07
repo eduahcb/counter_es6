@@ -1,0 +1,22 @@
+.display-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 3rem;
+  color: #fff;
+}
+
+.info h2 {
+  font-size: 6em;
+  margin: 0;
+}
+
+.info span {
+  font-size: 2rem;
+  color: #21EB00;
+}

@@ -1,0 +1,51 @@
+header {
+	text-align: center;
+  margin: 0 96px;
+	font-size: 1.5rem;
+	color: #21EB00;
+}
+
+.content {
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.sub-title {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.form-group {
+	display: flex;
+	margin: 0 auto;
+	width: 350px;
+}
+
+.date {
+	outline: none;
+	border: none;
+	background-color: #191A18;
+	border-radius: 30px;
+	padding: 8px 32px; 
+	width: 100%;
+	font-size: 1.5rem;
+	color: #fff
+}
+
+.btn {
+	cursor: pointer;
+	display: block;
+	margin: 16px auto 0 auto;
+	font-size: 1.5rem;
+	border: 1px solid #21EB00;
+	background-color: #21EB00;
+	border-radius: 30px;
+	padding: 8px 32px;
+	font-weight: bold;
+	width: 100%;
+}
+
+.btn:hover {
+	opacity: 0.4;
+}
