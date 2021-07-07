@@ -22,7 +22,7 @@ class CounterController {
 
   redirectToDisplay() {
     const value = document.querySelector('[data-input]').value
-    const date = this._convertStringToDate(value)
+    const date = this._dateConverter.stringToDate(value)
 
     if (!ValidateInput.isValid(value) || !ValidateInput.isFutureDate(date))
       return
@@ -42,12 +42,6 @@ class CounterController {
       return clearInterval(this._timerId)
 
     this._counterDisplayView.build({ days, hours, minutes, seconds })
-  }
-
-  _convertStringToDate(value) {
-    const date = value.split('/').reverse()
-    date[1] = date[1] - 1
-    return new Date(...date)
   }
 }
 

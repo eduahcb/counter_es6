@@ -23,6 +23,12 @@ class DateConverter {
   getSeconds(date) {
     return Math.floor((date / this._timers.second) % 60)
   }
+
+  stringToDate(string) {
+    const date = string.split('/').reverse()
+    date[1] = date[1] - 1
+    return new Date(...date)
+  }
 }
 
 export default DateConverter
